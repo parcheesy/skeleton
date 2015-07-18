@@ -4,12 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rake/testtask'
 require 'rename'
 
+#Set rake test task to run all tests
 Rake::TestTask.new do |t|
   t.libs << "tests"
   t.test_files = FileList['tests/test*.rb']
   t.verbose = true
 end
 
+#Tasks related to creating and maintaining projects
 namespace :project do
   
   desc "create new project from skeleton"
